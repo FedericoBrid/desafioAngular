@@ -1,0 +1,31 @@
+<div class="container p-5">
+    <form [formGroup]="dataForm" (ngSubmit)="mostrarDatos()" class="border p-3">
+        <div class="ml-5 col-sm-12 py-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <div class="ml-5 col-sm-12 py-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+        </div>
+        <div class="ml-5 col-sm-12 py-3">
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass" formControlName="pass">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+    </form>
+</div>
+<table class="table" *ngIf="hide">
+    <thead>
+        <tr>
+          <th scope="col">Datos Ingresados!</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let data of miArray">
+        <td>{{data}}</td>
+      </tr>
+    </tbody>
+  </table>
